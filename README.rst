@@ -1,5 +1,5 @@
-license
-=======
+licenraptor
+===========
 
 .. image:: https://badge.fury.io/py/license.svg
         :target: http://badge.fury.io/py/license
@@ -20,8 +20,8 @@ To get a license, you can use `SPDX license identifier <http://spdx.org/licenses
 
 .. code-block:: python
 
-    import license
-    mit = license.find('MIT')
+    import licenraptor
+    mit = licenraptor.find('MIT')
 
 Each license is a static class providing a few properties:
 
@@ -44,9 +44,9 @@ Some variables have to be passed to it, usually ``name``, ``email`` and optional
 
     mit.render(name='Petr Foo', email='petr@foo.org')
     '''The MIT License (MIT)
-    
+
     Copyright (c) 2015 Petr Foo <petr@foo.org>
-    
+
     Permission is hereby granted... (snip)'''
 
 Some licenses (such as the ones from GPL family) also have a header text, that's supposed to be
@@ -140,7 +140,7 @@ found. In that case, you have to create a *Custom Base License* with a ``jinja2`
 .. code-block:: python
 
     CustomBaseLicense = license.base.custom_license_base_class(loader=jinja2.FileSystemLoader('path/to/templates'))
-    
+
     class CustomLicense(CustomBaseLicense):
         ...
 
@@ -152,7 +152,7 @@ register all classes present in given module. You will not want to register your
 ``CustomBaseLicense``, so you'll pass it in the ``ignore`` argument.
 
 .. code-block:: python
-    
+
     license.autoregister(sys.modules[__name__], ignore=[CustomBaseLicense])
 
 Note that if you add custom licenses and use ``license.build_index()``, you want to build the index
@@ -167,13 +167,11 @@ Why are licenses represented as subclasses and not instances of ``License``?
 This way, it is easier to inherit data between multiple licenses. The definition of classes is
 easier maintainable and readable.
 
-Isn't ``license`` a reserved name?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Where the library name `licenraptor` came from?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes, it is, it prints the Python's license. Possibly something you would only use in an interactive
-Python console. By importing this library, you are overriding it. We could have named the library
-with something cool and unique, such as ``licenraptor``, but we wanted to make the name as easy as
-possible. In case you don't like this, you can always do ``import license as somethignelse``.
+Oh, Miro Hrončok suggest this name in his project `license <https://github.com/hroncok/license>`_
+which this project fork from :)
 
 Aren't there already Python tools that can render license texts?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
