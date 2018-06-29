@@ -1,14 +1,14 @@
 licenraptor
 ===========
 
-.. image:: https://badge.fury.io/py/license.svg
-        :target: http://badge.fury.io/py/license
+.. image:: https://img.shields.io/pypi/v/licenraptor.svg
+    :target: https://pypi.python.org/pypi/licenraptor
 
-.. image:: http://img.shields.io/:license-mit-green.svg?style=flat
-        :target: http://opensource.org/licenses/MIT
+.. image:: https://travis-ci.org/starofrainnight/licenraptor.svg
+    :target: https://travis-ci.org/starofrainnight/licenraptor.html
 
-.. image:: https://travis-ci.org/hroncok/license.png?branch=master
-        :target: https://travis-ci.org/hroncok/license
+.. image:: https://ci.appveyor.com/api/projects/status/github/starofrainnight/licenraptor?svg=true
+    :target: https://ci.appveyor.com/project/starofrainnight/licenraptor
 
 license is a Python library providing some metadata about common free software licenses, such as
 GNU GPL, MIT and others. It is compatible with Python 3.3+ and legacy Python 2.7.
@@ -183,3 +183,5 @@ programmers.
 * `licenser <https://pypi.python.org/pypi/licenser>`_
 * `licen <https://pypi.python.org/pypi/licen>`_
 * `garnish <https://pypi.python.org/pypi/garnish>`_
+
+

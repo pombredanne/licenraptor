@@ -1,35 +1,60 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+
+"""The setup script."""
+
 from setuptools import setup, find_packages
 
+with open('README.rst') as readme_file, open('HISTORY.rst') as history_file:
+    long_description = (readme_file.read() + "\n\n" + history_file.read())
+
+install_requires = [
+    'click>=6.0',
+    # TODO: put package requirements here
+]
+
+setup_requires = [
+    'pytest-runner',
+    # TODO(starofrainnight): put setup requirements (distutils extensions, etc.) here
+]
+
+tests_requires = [
+    'pytest',
+    'click>=6.0',
+    # TODO: put package test requirements here
+]
+
 setup(
-    name='license',
-    version='0.1a2',
-    description='Library that encapsulates free software licenses',
-    long_description=''.join(open('README.rst').readlines()),
-    keywords='license',
-    author='Miro Hrončok',
-    author_email='miro@hroncok.cz',
-    license='MIT',
-    url='https://github.com/hroncok/license',
-    packages=[p for p in find_packages() if p != 'test'],
-    package_data={'license': ['templates/*']},
-    install_requires=['jinja2'],
+    name='licenraptor',
+    version='0.2.0',
+    description="Library that encapsulates free software licenses",
+    long_description=long_description,
+    author="Hong-She Liang",
+    author_email='starofrainnight@gmail.com',
+    url='https://github.com/starofrainnight/licenraptor',
+    packages=find_packages(),
+    entry_points={
+        'console_scripts': [
+            'licenraptor=licenraptor.__main__:main'
+        ]
+    },
+    include_package_data=True,
+    install_requires=install_requires,
+    license="Apache Software License",
+    zip_safe=False,
+    keywords='licenraptor,licenraptor',
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: MIT License',
-        'Operating System :: MacOS :: MacOS X',
-        'Operating System :: POSIX :: Linux',
-        'Programming Language :: Python',
-        'Programming Language :: Python :: Implementation :: CPython',
-        'Programming Language :: Python :: Implementation :: PyPy',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.7',
+        'License :: OSI Approved :: Apache Software License',
+        'Natural Language :: English',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
-        'Topic :: Software Development :: Libraries',
-        ]
+        'Programming Language :: Python :: 3.6',
+    ],
+    test_suite='tests',
+    tests_require=tests_requires,
+    setup_requires=setup_requires,
 )
