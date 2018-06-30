@@ -34,8 +34,9 @@ class License(object):
 
     __metaclass__ = LicenseClass
 
-    jinja_env = jinja2.Environment(loader=jinja2.PackageLoader('licenraptor', 'templates'),
-                                   undefined=jinja2.StrictUndefined)
+    jinja_env = jinja2.Environment(
+        loader=jinja2.PackageLoader('licenraptor', 'templates'),
+        undefined=jinja2.StrictUndefined)
 
     def __init__(self):
         raise TypeError('License classes are not about to be instantiated')

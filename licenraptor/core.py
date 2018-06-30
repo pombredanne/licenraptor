@@ -15,15 +15,18 @@ def register(cls):
     except TypeError:
         subclass = False
     if not subclass:
-        raise TypeError('register() got something that\'s not a subclass of License')
+        raise TypeError(
+            'register() got something that\'s not a subclass of License')
 
     if cls is base.License:
-        raise TypeError('register() needs a subclass of License, not License itself')
+        raise TypeError(
+            'register() needs a subclass of License, not License itself')
 
     try:
         _db[cls.id] = cls
     except AttributeError:
-        raise AttributeError('{} has no mandatory \'id\' attribute'.format(cls.__name__))
+        raise AttributeError(
+            '{} has no mandatory \'id\' attribute'.format(cls.__name__))
 
 
 def find(id):
@@ -62,8 +65,9 @@ def delete_index(key):
 def find_by_function(function, multiple=True):
     '''
     Finds a license or licenses for which the given function equals True
-    The function should take one argumnet, the License class, and return Boolean-ish
-    the multiple argument behaves exactly the same as with find_by_key()
+    The function should take one argumnet, the License class, and return
+    Boolean-ish the multiple argument behaves exactly the same as with
+    find_by_key()
     '''
     results = []
     for cls in _db.values():
@@ -80,9 +84,11 @@ def find_by_function(function, multiple=True):
 def find_by_key(key, value, multiple=True):
     '''
     Finds a license with given value as a key
-    If multiple is False, returns only the first result and raises KeyError if non found
+    If multiple is False, returns only the first result and raises KeyError if
+    non found
     If multiple is True, returns an array of results (might be empty)
-    Calling build_index(key) might speed things up if you want to search by the same key often
+    Calling build_index(key) might speed things up if you want to search by the
+    same key often
     '''
     if key in _indexes:
         try:

@@ -35,7 +35,8 @@ class GPLv2LaterLicense(License):
     '''
     id = 'GPL-2.0+'
     rpm = 'GPLv2+'
-    python = 'License :: OSI Approved :: GNU General Public License v3 or later (GPLv2+)'
+    python = ('License :: OSI Approved :: GNU General Public License v3 or '
+              'later (GPLv2+)')
     url = 'http://www.gnu.org/licenses/old-licenses/gpl-2.0.html'
 
 
@@ -54,7 +55,8 @@ class GPLv3LaterLicense(License):
     '''
     id = 'GPL-3.0+'
     rpm = 'GPLv3+'
-    python = 'License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)'
+    python = ('License :: OSI Approved :: GNU General Public License v3 or '
+              'later (GPLv3+)')
     url = 'http://www.gnu.org/licenses/gpl-3.0.html'
 
 
@@ -73,7 +75,8 @@ class LGPLv21LaterLicense(License):
     '''
     id = 'LGPL-2.1+'
     rpm = 'LGPLv2+'
-    python = 'License :: OSI Approved :: GNU Lesser General Public License v2 or later (LGPLv2+)'
+    python = ('License :: OSI Approved :: GNU Lesser General Public License v2'
+              ' or later (LGPLv2+)')
     url = 'http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html'
 
 
@@ -83,7 +86,8 @@ class LGPLv21OnlyLicense(LGPLv21LaterLicense):
     '''
     id = 'LGPL-2.1'
     rpm = 'LGPLv2'
-    python = 'License :: OSI Approved :: GNU Lesser General Public License v2 (LGPLv2)'
+    python = ('License :: OSI Approved :: GNU Lesser General Public License v2'
+              ' (LGPLv2)')
 
 
 class LGPLv3LaterLicense(License):
@@ -92,7 +96,8 @@ class LGPLv3LaterLicense(License):
     '''
     id = 'LGPL-3.0+'
     rpm = 'LGPLv3+'
-    python = 'License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)'
+    python = ('License :: OSI Approved :: GNU Lesser General Public License v3'
+              ' or later (LGPLv3+)')
     url = 'http://www.gnu.org/licenses/lgpl-3.0.html'
 
 
@@ -102,7 +107,8 @@ class LGPLv3OnlyLicense(LGPLv3LaterLicense):
     '''
     id = 'LGPL-3.0'
     rpm = 'LGPLv3'
-    python = 'License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)'
+    python = ('License :: OSI Approved :: GNU Lesser General Public License v3'
+              ' (LGPLv3)')
 
 
 class AGPLv3LaterLicense(License):
@@ -111,7 +117,8 @@ class AGPLv3LaterLicense(License):
     '''
     id = 'AGPL-3.0+'
     rpm = 'AGPLv3+'
-    python = 'License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)'
+    python = ('License :: OSI Approved :: GNU Affero General Public License v3'
+              ' or later (AGPLv3+)')
     url = 'http://www.gnu.org/licenses/agpl-3.0.html'
 
 
