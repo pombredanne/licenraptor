@@ -4,7 +4,7 @@ from datetime import date
 import jinja2
 import pytest
 
-import license
+import licenraptor
 
 
 class TestRender(object):
@@ -16,7 +16,7 @@ class TestRender(object):
         '''
         email = 'peter@foo.org'
 
-        text = license.find('MIT').render(name=name, email=email)
+        text = licenraptor.find('MIT').render(name=name, email=email)
 
         assert name in text
         assert email in text
@@ -29,7 +29,7 @@ class TestRender(object):
         Test that License classes with header render it
         '''
         email = 'peter@foo.org'
-        header = license.find(id).header(name='Petr Foo', email=email)
+        header = licenraptor.find(id).header(name='Petr Foo', email=email)
         assert email in header
         assert str(date.today().year) in header
         assert 'This program is free software' in header
@@ -39,11 +39,11 @@ class TestRender(object):
         Test that License classes without header templates raise AttributeError during .header()
         '''
         with pytest.raises(AttributeError):
-            header = license.find('MIT').header()
+            header = licenraptor.find('MIT').header()
 
     def test_render_undefined(self):
         '''
         Test that License classes will fail to render without all variables defined
         '''
         with pytest.raises(jinja2.UndefinedError):
-            license.find('MIT').render(name='xx')
+            licenraptor.find('MIT').render(name='xx')

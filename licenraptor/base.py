@@ -7,6 +7,7 @@ class classproperty(object):
     '''
     Decorator for class property
     '''
+
     def __init__(self, getter):
         self.getter = getter
 
@@ -33,7 +34,7 @@ class License(object):
 
     __metaclass__ = LicenseClass
 
-    jinja_env = jinja2.Environment(loader=jinja2.PackageLoader('license', 'templates'),
+    jinja_env = jinja2.Environment(loader=jinja2.PackageLoader('licenraptor', 'templates'),
                                    undefined=jinja2.StrictUndefined)
 
     def __init__(self):
@@ -55,7 +56,8 @@ class License(object):
     @classmethod
     def _check(cls):
         if cls == License:
-            raise TypeError('This is a virtual class, do not call it\'s methods')
+            raise TypeError(
+                'This is a virtual class, do not call it\'s methods')
 
     @classmethod
     def render(cls, **kwargs):
@@ -87,9 +89,11 @@ def custom_license_base_class(loader):
     Requires a jinja2.<something>Loader as an argument
     '''
     if not isinstance(loader, jinja2.loaders.BaseLoader):
-        raise AttributeError('loader has to be a jinja2.<something>Loader instance')
+        raise AttributeError(
+            'loader has to be a jinja2.<something>Loader instance')
 
     class CustomBaseLicense(License):
-        jinja_env = jinja2.Environment(loader=loader, undefined=jinja2.StrictUndefined)
+        jinja_env = jinja2.Environment(
+            loader=loader, undefined=jinja2.StrictUndefined)
 
     return CustomBaseLicense

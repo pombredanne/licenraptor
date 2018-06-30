@@ -20,7 +20,6 @@ setup_requires = [
 
 tests_requires = [
     'pytest',
-    'click>=6.0',
     # TODO: put package test requirements here
 ]
 

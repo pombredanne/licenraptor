@@ -3,8 +3,8 @@ import sys
 import jinja2
 import pytest
 
-import license
-from license import base
+import licenraptor
+from licenraptor import base
 
 
 class TestLicenseClass(object):
@@ -79,7 +79,8 @@ class TestCustomBaseLicenseFactory(object):
 
     @classmethod
     def setup_class(self):
-        sbl = base.custom_license_base_class(loader=jinja2.FileSystemLoader('test/files'))
+        sbl = base.custom_license_base_class(
+            loader=jinja2.FileSystemLoader('tests/files'))
 
         class CustomLicense(sbl):
             '''Custom'''
@@ -99,11 +100,11 @@ class TestCustomBaseLicenseFactory(object):
         Test that custom license can be registered and found
         '''
         try:
-            license.register(self.custom_cls)
-            assert license.find('CUSTOM') == self.custom_cls
+            licenraptor.register(self.custom_cls)
+            assert licenraptor.find('CUSTOM') == self.custom_cls
         finally:
             # unregister, just in case
             try:
-                del license.core._db['CUSTOM']
+                del licenraptor.core._db['CUSTOM']
             except:
                 pass
