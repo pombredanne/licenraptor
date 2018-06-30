@@ -11,7 +11,7 @@ licenraptor
     :target: https://ci.appveyor.com/project/starofrainnight/licenraptor
 
 license is a Python library providing some metadata about common free software licenses, such as
-GNU GPL, MIT and others. It is compatible with Python 3.3+ and legacy Python 2.7.
+GNU GPL, MIT and others. It is compatible with Python 3.4+.
 
 Basic usage
 -----------
