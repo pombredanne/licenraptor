@@ -4,8 +4,8 @@ licenraptor
 .. image:: https://img.shields.io/pypi/v/licenraptor.svg
     :target: https://pypi.python.org/pypi/licenraptor
 
-.. image:: https://travis-ci.org/starofrainnight/licenraptor.svg
-    :target: https://travis-ci.org/starofrainnight/licenraptor.html
+.. image:: https://travis-ci.org/starofrainnight/licenraptor.svg?branch=master
+    :target: https://travis-ci.org/starofrainnight/licenraptor
 
 .. image:: https://ci.appveyor.com/api/projects/status/github/starofrainnight/licenraptor?svg=true
     :target: https://ci.appveyor.com/project/starofrainnight/licenraptor
