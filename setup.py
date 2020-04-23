@@ -27,7 +27,7 @@ tests_requires = [
 
 setup(
     name="licenraptor",
-    version="0.2.2",
+    version="version='0.2.3'",
     description="Library that encapsulates free software licenses",
     long_description=long_description,
     author="Hong-She Liang",
