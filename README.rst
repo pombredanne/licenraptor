@@ -110,9 +110,9 @@ Adding licenses
 ---------------
 
 The current license list is in no way much extensive, so maybe your favorite license is not in
-there. If you wish to change that, add the license to ``license/licenses.py`` and a template(s) to
-``license/templates``, and send a `pull request on GitHub
-<https://github.com/hroncok/license/pulls>`_. See the current licenses to learn how to do it.
+there. If you wish to change that, add the license to ``licenraptor/licenses.py`` and a template(s) to
+``licenraptor/templates``, and send a `pull request on GitHub
+<https://github.com/starofrainnight/licenraptor/pulls>`_. See the current licenses to learn how to do it.
 A license class looks like this:
 
 .. code-block:: python
