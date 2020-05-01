@@ -195,7 +195,6 @@ class Mulanv1License(License):
     """
 
     id = "MulanPSL-1.0"
-    rpm = "MulanPSL 1.0"
     url = "https://license.coscl.org.cn/MulanPSL/"
 
 
@@ -205,5 +204,4 @@ class Mulanv2License(Mulanv1License):
     """
 
     id = "MulanPSL-2.0"
-    rpm = "MulanPSL 2.0"
     url = "https://license.coscl.org.cn/MulanPSL2/"
